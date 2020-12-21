@@ -1,1 +1,240 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, rgb(17, 49, 136), rgba(0, 2, 8, 0.986));
+    background-size: cover;
+    /*background-color: rgba(0, 2, 8, 0.986);*/
+}
+
+.nav {
+    background-color:  rgba(1, 4, 20, 0.027);
+    color: rgb(180, 172, 172);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 95px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100%;
+}
+
+.nav > div {
+    margin: 10px 40px 10px 40px;
+}
+
+.logo {
+    font-family: 'Audiowide', cursive;
+    text-transform: uppercase;
+    color: azure;
+    font-size: large;
+}
+
+.auth-log {
+    font-family: 'Audiowide', cursive;
+    text-transform: uppercase;
+    color: azure;
+}
+
+.main-grid-conatiner {
+    margin: 20px 40px 10px 40px;
+    display: grid;
+    grid-template-columns:  1fr 10px 1fr;
+    grid-template-areas: 
+        "brandNasa mid brandSpaceX"
+        "nasaContainer mid spaceXContainer";
+    column-gap: 20px;
+    row-gap: 50px;
+    justify-items: stretch;
+    min-height: calc(100vh - 70px);
+}
+
+.brand-logo {
+    display: flex;
+    justify-content: center;
+    color: azure;
+}
+
+.brand-logo .nasa {
+    grid-area: brandNasa;
+}
+
+.nasa span {
+    font-family: 'Audiowide', cursive;
+}
+
+.brand-logo .spacex {
+    grid-area: brandSpaceX;
+}
+
+.spacex span {
+    font-family: 'Audiowide', cursive;
+    text-transform: uppercase;
+}
+
+.nasa-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px , 1fr));
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-area: nasaContainer;
+}
+
+.mid {
+    background-color: rgba(173, 133, 60, 0.253);
+    grid-area: mid;
+    border-radius: 20px;
+}
+.spacex-conatiner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px , 1fr));
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-area: spaceXContainer;
+}
+
+
+.card--1 .card__img {
+    background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.card__img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card {
+    background-color: rgba(0, 26, 75, 0);
+    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.404);
+    animation: cardEntrada 900ms ease-out;
+    animation-fill-mode: backwards
+}
+
+.card--1 {
+    transition: all 300ms;
+}
+
+.card--1:hover {
+    transform: translateY(-1px) scale(1.1);
+}
+
+@keyframes cardEntrada {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.card__info {
+    padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+    font-family: 'Thasadith', sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: azure;
+}
+
+.card__title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: azure;
+    font-family: 'Thasadith', sans-serif;
+    letter-spacing: 2px;
+}
+
+.card__by {
+    font-size: 8px;
+    font-family: 'Thasadith', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card__author {
+    font-family: 'Thasadith', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 10px;
+    color: azure;
+}
+
+
+.fot-space {
+    background-color: rgba(17, 49, 136, 0.26);
+    height: 70px;
+}
+
+/* Modificaciones con la media querys importante */
+
+
+@media screen and (max-width: 620px){
+    .nav {
+        justify-content: center;
+    }
+
+    .auth-log {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 400px){
+
+    .main-grid-conatiner {
+        margin: 50px 40px 50px 40px;
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "brandNasa"
+            "nasaContainer"
+            "brandSpaceX"
+            "spaceXContainer";
+        row-gap: 70px;
+    }
+
+    .mid {
+        display: none;
+    }
+
+    .brand-logo .nasa{
+        grid-area: brandNasa;
+    }
+    
+    .brand-logo .spacex {
+        grid-area: brandSpaceX;
+    }
+    
+    .nasa-container {
+        grid-template-columns: auto;
+        row-gap: 10px;
+        grid-area: nasaContainer;
+    }
+    
+    .spacex-conatiner {
+        grid-template-columns: auto;
+        row-gap: 10px;
+        grid-area: spaceXContainer;
+    }
+}

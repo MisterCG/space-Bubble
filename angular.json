@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spaceBubble"
+    }
+  },
+  "defaultProject": "spaceBubble",
+  "cli": {
+    "analytics": "48a94b85-7405-428f-9097-ab4d55a9b963"
+  }
 }
