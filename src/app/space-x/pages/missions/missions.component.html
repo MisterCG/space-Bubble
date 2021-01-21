@@ -1,1 +1,14 @@
-<p>missions works!</p>
+
+<div class="spacex-conatiner">
+    <div class="card card--1" *ngFor="let mission of missions">
+        <div class="card__img" style="background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');">
+        </div>
+        <div class="card__info">
+            <span class="card__category" *ngFor="let payload of mission.payload_ids">
+                {{ payload }}
+            </span>
+            <h3 class="card__title">{{ mission.description | slice: 0:50}}...</h3>
+            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
+        </div>
+    </div>
+</div>

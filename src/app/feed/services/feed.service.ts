@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NasaSearch, Item } from '../../shared/interfaces/nasa.search';
+import { SpaceXLaunches } from '../../shared/interfaces/spaceX.launches';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class FeedService {
 
   searchNasa(): Observable<Item[]> {
 
-    return this.http.get<NasaSearch>('https://nasa-spacex-api.herokuapp.com/search-media-nasa/moon')
+    return this.http.get<NasaSearch>('http://localhost:3005/search-media-nasa/Apollo 11')
                 .pipe(
                   map( res => res.collection.items )
                 )
@@ -21,9 +22,9 @@ export class FeedService {
   }
 
 
-  searchSpaceX () {
+  searchSpaceX(): Observable<SpaceXLaunches[]> {
 
-    this.http.get('');
+    return this.http.get<SpaceXLaunches[]>('http://localhost:3005/launches-spaceX');
 
   }
 

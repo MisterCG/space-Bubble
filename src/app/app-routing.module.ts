@@ -4,7 +4,7 @@ import { FeedViewComponent } from './view/feed-view/feed-view.component';
 import { AuthViewComponent } from './view/auth-view/auth-view.component';
 
 const routes: Routes = [
-  { path: 'feed', component: FeedViewComponent, children: [
+  { path: '', component: FeedViewComponent, children: [
       { 
         path: '', 
         loadChildren: () => import('./feed/feed.module').then( m => m.FeedModule ) 

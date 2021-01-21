@@ -6,9 +6,13 @@
 html {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to top, rgb(17, 49, 136), rgba(0, 2, 8, 0.986));
-    background-size: cover;
     /*background-color: rgba(0, 2, 8, 0.986);*/
+}
+body {
+    background: linear-gradient(to top, rgb(17, 49, 136), rgba(0, 2, 8, 0.986));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }
 
 .nav {
@@ -21,23 +25,56 @@ html {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 100%;
-}
-
-.nav > div {
-    margin: 10px 40px 10px 40px;
-}
-
-.logo {
     font-family: 'Audiowide', cursive;
     text-transform: uppercase;
     color: azure;
     font-size: large;
 }
 
-.auth-log {
-    font-family: 'Audiowide', cursive;
-    text-transform: uppercase;
-    color: azure;
+.nav > div {
+    margin: 10px 40px 10px 40px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.nav li a {
+    background-color: #000000b6;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+}
+
+.nav > li {
+    float: left;
+}
+
+.nav li a:hover {
+    background-color: #434343;
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+
+.nav li ul li {
+    position: relative
+}
+
+
+.nav li ul li ul {
+    right: -140px;
+    top: 0;
 }
 
 .main-grid-conatiner {
@@ -99,15 +136,17 @@ html {
 
 
 .card--1 .card__img {
-    background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+    /*background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+*/
 }
+
 
 .card__img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 200px;
+    height: 150px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
@@ -189,15 +228,19 @@ html {
 
 /* Modificaciones con la media querys importante */
 
-
-@media screen and (max-width: 620px){
+@media screen and (max-width: 780px) {
     .nav {
         justify-content: center;
     }
 
-    .auth-log {
+    .nav-items {
         display: none;
     }
+}
+
+
+@media screen and (max-width: 620px){
+
 }
 
 

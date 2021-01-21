@@ -1,0 +1,11 @@
+<div class="spacex-conatiner">
+    <div class="card card--1" *ngFor="let launch of launches">
+        <div class="card__img" style="background-image: url('{{ launch.links.mission_patch_small }}');">
+        </div>
+        <div class="card__info">
+            <span class="card__category">Mission name: {{ launch.mission_name }}</span>
+            <h3 class="card__title">{{ launch.details | slice:0:50 }}...</h3>
+            <span class="card__by">by <a href="#" target="_blank" class="card__author" title="author">{{ launch.static_fire_date_utc }}</a></span>
+        </div>
+    </div>
+</div>

@@ -6,134 +6,28 @@
         <span>SpaceX</span>
     </div> 
   
-    <div class="nasa-container">
-        <div class="card card--1">
-            <div class="card__img">
+    <div class="nasa-container" *ngIf="show">
+        <div class="card card--1" *ngFor="let item of itemsSearch">
+            <div class="card__img" style="background-image: url('{{ item.links[0].href }}')">
             </div>
             <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
+                <span class="card__category" *ngFor="let keyWord of item.data[0].keywords"> 
+                    {{ keyWord }}
+                </span>
+                <h3 class="card__title">{{ item.data[0].title }}</h3>
+                <span class="card__by">by <a href="#" class="card__author" title="author">{{ item.data[0].photographer }}</a></span>
             </div>
         </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div> 
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category">Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div> 
     </div>
     <div class="mid"></div>
-    <div class="spacex-conatiner">
-        <div class="card card--1">
-            <div class="card__img">
+    <div class="spacex-conatiner" *ngIf="show">
+        <div class="card card--1" *ngFor="let launch of launches">
+            <div class="card__img" style="background-image: url('{{ launch.links.mission_patch_small }}');">
             </div>
             <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-            </div>
-        </div>
-        <div class="card card--1">
-            <div class="card__img">
-            </div>
-            <div class="card__info">
-                <span class="card__category"> Recipe</span>
-                <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
+                <span class="card__category">Mission name: {{ launch.mission_name }}</span>
+                <h3 class="card__title">{{ launch.details | slice:0:50 }}...</h3>
+                <span class="card__by">by <a href="#" target="_blank" class="card__author" title="author">{{ launch.static_fire_date_utc }}</a></span>
             </div>
         </div>
     </div>
