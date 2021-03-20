@@ -7,14 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { AuthViewComponent } from './view/auth-view/auth-view.component';
 import { FeedViewComponent } from './view/feed-view/feed-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthViewComponent,
     FeedViewComponent
   ],
   imports: [

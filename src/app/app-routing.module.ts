@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { FeedViewComponent } from './view/feed-view/feed-view.component';
-import { AuthViewComponent } from './view/auth-view/auth-view.component';
 
 const routes: Routes = [
   { path: '', component: FeedViewComponent, children: [
@@ -16,13 +15,6 @@ const routes: Routes = [
       { 
         path: 'spaceX',
         loadChildren: () => import('./space-x/space-x.module').then( m => m.SpaceXModule )
-      }
-    ]
-  },
-  { path: 'auth', component: AuthViewComponent, children: [
-      { 
-        path: '',
-        loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
       }
     ]
   },
