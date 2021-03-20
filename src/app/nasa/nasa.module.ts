@@ -6,6 +6,7 @@ import { LibraryComponent } from './pages/library/library.component';
 import { ApodTodayComponent } from './pages/apod-today/apod-today.component';
 import { AsteroidNearComponent } from './pages/asteroid-near/asteroid-near.component';
 import { AsteroidBrowseComponent } from './pages/asteroid-browse/asteroid-browse.component';
+import { ImageNotFoundPipe } from './pipes/image-not-found.pipe';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { AsteroidBrowseComponent } from './pages/asteroid-browse/asteroid-browse
     LibraryComponent, 
     ApodTodayComponent, 
     AsteroidNearComponent, 
-    AsteroidBrowseComponent
+    AsteroidBrowseComponent, ImageNotFoundPipe
   ],
   imports: [
     CommonModule,

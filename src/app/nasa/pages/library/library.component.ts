@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LibraryService } from '../../services/library.service';
-
+import { Item } from '../../../shared/interfaces/nasa.search';
 
 @Component({
   selector: 'app-library',
@@ -9,6 +9,10 @@ import { LibraryService } from '../../services/library.service';
 })
 export class LibraryComponent implements OnInit {
 
+  loading: boolean = false;
+  itemsSearch: Item[] = [];
+  showSearch: boolean = false;
+
   constructor( private library: LibraryService ) { }
 
   ngOnInit(): void {
@@ -16,8 +20,15 @@ export class LibraryComponent implements OnInit {
   }
 
   searchLibrary( q: string ) {
+    this.loading = true;
+    this.showSearch = false;
     this.library.searchMedia( q )
-          .subscribe( res => console.log(res) );
+          .subscribe( res => {
+            console.log(res);
+            this.loading = false;
+            this.itemsSearch = res
+            this.showSearch = true;         
+          });
   }
 
 }

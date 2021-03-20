@@ -1,1 +1,16 @@
-<p>asteroid-near works!</p>
+<h3>Near objects of: {{nearObjectOfToday.date}}</h3>
+
+<div class="asteroid_container">
+	<div class="card card--1" *ngFor="let asteroid of nearObjectOfToday.near_objects">
+		<div class="card__img asteroid">
+        </div>
+        <div class="card__info">
+            <span class="card__category">Asteroid name: {{ asteroid.name }}</span>
+            <h4 class="card__desc">Close approach date: {{ asteroid.close_approach_data[0].close_approach_date }}</h4>
+            <h4 class="card__desc">Orbiting planet: {{ asteroid.close_approach_data[0].orbiting_body  }}</h4>
+            <span class="card__by"><a [href]="asteroid.nasa_jpl_url" target="_blank" class="card__author" title="author">
+            	More info
+            </a></span>
+        </div>
+    </div>
+</div>

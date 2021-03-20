@@ -1,0 +1,14 @@
+.library_container{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px , 1fr));
+	gap: 30px
+}
+
+.card__desc {
+	margin-top: 5px;
+    margin-bottom: 10px;
+    color: azure;
+    font-family: 'Thasadith', sans-serif;
+    letter-spacing: 2px;
+    font-size: 15px;
+}

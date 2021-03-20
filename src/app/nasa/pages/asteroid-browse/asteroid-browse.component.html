@@ -1,1 +1,14 @@
-<p>asteroid-browse works!</p>
+<div class="asteroid_container">
+	<div class="card card--1" *ngFor="let asteroid of asteroids">
+		<div class="card__img asteroid">
+        </div>
+        <div class="card__info">
+            <span class="card__category">Asteroid name: {{ asteroid.name_limited }}</span>
+            <h4 class="card__desc">First observation: {{ asteroid.orbital_data.first_observation_date }}</h4>
+            <h4 class="card__desc">Last observation: {{ asteroid.orbital_data.last_observation_date  }}</h4>
+            <span class="card__by"><a [href]="asteroid.nasa_jpl_url" target="_blank" class="card__author" title="author">
+            	More info
+            </a></span>
+        </div>
+    </div>
+</div>

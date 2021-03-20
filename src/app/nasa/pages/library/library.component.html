@@ -1,5 +1,5 @@
 <div class="search">
-    <h3>Realiza una busqueda en la librería de imagenes y videos de la NASA</h3>
+    <h3>You can research images, videos and more in the library of NASA</h3>
     <div class="search-box">
         <input type="text" placeholder="Busca un tema de tu interes" (keyup.enter)="searchLibrary(box.value)" #box>
     </div>
@@ -7,68 +7,16 @@
 
 
 
-<div class="nasa-container">
-    <div class="card card--1">
-        <div class="card__img">
+<div class="library_container"  *ngIf="showSearch">
+    <div class="card card--1" *ngFor="let item of itemsSearch">
+            <div class="card__img" style="background-image: url('{{ item | imageNotFound }}')">
+            </div>
+            <div class="card__info">
+                <span class="card__category"> 
+                    {{ item.data[0].title }}
+                </span>
+                <h3 class="card__desc">{{ item.data[0].description | slice:0:100 }}...</h3>
+                <span class="card__by"><a href="#" class="card__author" target="_blank" title="author">{{ item.data[0].photographer }}</a></span>
+            </div>
         </div>
-        <div class="card__info">
-            <span class="card__category"> Recipe</span>
-            <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-        </div>
-    </div>
-    <div class="card card--1">
-        <div class="card__img">
-        </div>
-        <div class="card__info">
-            <span class="card__category"> Recipe</span>
-            <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-        </div>
-    </div>
-    <div class="card card--1">
-        <div class="card__img">
-        </div>
-        <div class="card__info">
-            <span class="card__category"> Recipe</span>
-            <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-        </div>
-    </div>
-    <div class="card card--1">
-        <div class="card__img">
-        </div>
-        <div class="card__info">
-            <span class="card__category"> Recipe</span>
-            <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-        </div>
-    </div>
-    <div class="card card--1">
-        <div class="card__img">
-        </div>
-        <div class="card__info">
-            <span class="card__category"> Recipe</span>
-            <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-        </div>
-    </div>
-    <div class="card card--1">
-        <div class="card__img">
-        </div>
-        <div class="card__info">
-            <span class="card__category"> Recipe</span>
-            <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-        </div>
-    </div> 
-    <div class="card card--1">
-        <div class="card__img">
-        </div>
-        <div class="card__info">
-            <span class="card__category">Recipe</span>
-            <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-        </div>
-    </div> 
 </div>
